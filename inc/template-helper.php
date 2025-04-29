@@ -261,34 +261,33 @@ function crank_footer_social_profiles()
     $crank_footer_youtube_url = get_theme_mod('crank_footer_youtube_url', __('#', 'crank'));
 ?>
 
-
     <?php if (!empty($crank_footer_fb_url)): ?>
         <a href="<?php print esc_url($crank_footer_fb_url); ?>">
-            <i class="fa-brands fa-facebook-f"></i>
+            <span class="icon-facebook-f"></span>
         </a>
     <?php endif; ?>
 
     <?php if (!empty($crank_footer_twitter_url)): ?>
         <a href="<?php print esc_url($crank_footer_twitter_url); ?>">
-            <i class="fa-brands fa-twitter"></i>
+            <span class="icon-Vector"></span>
         </a>
     <?php endif; ?>
 
     <?php if (!empty($crank_footer_instagram_url)): ?>
         <a href="<?php print esc_url($crank_footer_instagram_url); ?>">
-            <i class="fa-brands fa-instagram"></i>
+            <span class="icon-instagram"></span>
         </a>
     <?php endif; ?>
 
     <?php if (!empty($crank_footer_linkedin_url)): ?>
         <a href="<?php print esc_url($crank_footer_linkedin_url); ?>">
-            <i class="fa-brands fa-linkedin-in"></i>
+            <span class="icon-pintarest"></span>
         </a>
     <?php endif; ?>
 
     <?php if (!empty($crank_footer_youtube_url)): ?>
         <a href="<?php print esc_url($crank_footer_youtube_url); ?>">
-            <i class="fa-brands fa-youtube"></i>
+            <!-- <i class="fa-brands fa-youtube"></i> -->
         </a>
     <?php endif; ?>
 

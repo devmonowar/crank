@@ -136,5 +136,3 @@ switch ($footer_columns) {
     </div>
     <!-- copy-right area end -->
 </footer>
-
-

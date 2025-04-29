@@ -18,11 +18,11 @@ get_header();
 $blog_column = is_active_sidebar('blog-sidebar') ? 8 : 12;
 ?>
 
-<section class="tp-postbox-area pt-120 pb-120">
+<section class="tp-postbox-area blog-list pt-120 pb-120">
 	<div class="container">
 		<div class="row">
 			<div class="col-xxl-<?php print esc_attr($blog_column); ?> col-xl-<?php print esc_attr($blog_column); ?> col-lg-<?php print esc_attr($blog_column); ?>">
-				<div class="postbox__wrapper-2">
+				<div class="blog-list__left">
 					<?php
 					if (have_posts()):
 						if (is_home() && !is_front_page()):

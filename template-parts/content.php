@@ -71,6 +71,38 @@
  <?php else: ?>
 
 
+
+
+    <div class="blog-list__single">
+       <div class="blog-list__img-box">
+          <div class="blog-list__img">
+             <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail(); ?>
+             </a>
+          </div>
+          <ul class="blog-list__meta list-unstyled">
+             <li>
+                <p><span class="icon-calendar"></span>Nov 19, 2022</p>
+             </li>
+             <li>
+                <p><span class="icon-user-2"></span>By admin</p>
+             </li>
+          </ul>
+       </div>
+       <div class="blog-list__content">
+          <h3 class="blog-list__title"><a href="blog-details.html">Easy Drive Maintenance
+                Center Elite Auto
+                Services</a></h3>
+          <div class="blog-list__btn-box">
+             <a href="blog-details.html" class="thm-btn">READ MORE<span
+                   class="icon-arrow-up-right"></span></a>
+          </div>
+       </div>
+    </div>
+
+
+
+
     <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-image mb-30 transition-3 format-standard'); ?>>
        <?php if (has_post_thumbnail()) : ?>
           <div class="postbox__thumb">
