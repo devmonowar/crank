@@ -74,27 +74,30 @@
 
 
     <div class="blog-list__single">
-       <div class="blog-list__img-box">
-          <div class="blog-list__img">
-             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail(); ?>
-             </a>
+       <?php if (has_post_thumbnail()) : ?>
+          <div class="blog-list__img-box">
+             <div class="blog-list__img">
+                <a href="<?php the_permalink(); ?>">
+                   <?php the_post_thumbnail('full'); ?>
+                </a>
+             </div>
+             <ul class="blog-list__meta list-unstyled">
+                <li>
+                   <p><span class="icon-calendar"></span>Nov 19, 2022</p>
+                </li>
+                <li>
+                   <p><span class="icon-user-2"></span>By admin</p>
+                </li>
+             </ul>
           </div>
-          <ul class="blog-list__meta list-unstyled">
-             <li>
-                <p><span class="icon-calendar"></span>Nov 19, 2022</p>
-             </li>
-             <li>
-                <p><span class="icon-user-2"></span>By admin</p>
-             </li>
-          </ul>
-       </div>
+       <?php endif; ?>
        <div class="blog-list__content">
-          <h3 class="blog-list__title"><a href="blog-details.html">Easy Drive Maintenance
-                Center Elite Auto
-                Services</a></h3>
+
+          <?php get_template_part('template-parts/blog/blog-meta'); ?>
+
+          <h3 class="blog-list__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
           <div class="blog-list__btn-box">
-             <a href="blog-details.html" class="thm-btn">READ MORE<span
+             <a href="<?php the_permalink(); ?>" class="thm-btn">READ MORE<span
                    class="icon-arrow-up-right"></span></a>
           </div>
        </div>

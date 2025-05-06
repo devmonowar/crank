@@ -29,7 +29,7 @@ $crank_blog_cat = get_theme_mod('crank_blog_cat', false);
     <?php if (!empty($crank_blog_cat)): ?>
         <?php if (!empty($categories[0]->name)): ?>
             <span> <a href="<?php print esc_url(get_category_link($categories[0]->term_id)); ?>"> <i
-                        class="fa-regular fa-folder-open"></i>
+                        class="icon-user-2"></i>
                     <?php echo esc_html($categories[0]->name); ?>
                 </a>
             </span>
