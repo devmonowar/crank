@@ -97,8 +97,9 @@
 
           <h3 class="blog-list__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
           <div class="blog-list__btn-box">
-             <a href="<?php the_permalink(); ?>" class="thm-btn">READ MORE<span
-                   class="icon-arrow-up-right"></span></a>
+             <?php the_excerpt(); ?>
+             <!-- blog btn -->
+             <?php get_template_part('template-parts/blog/blog-btn'); ?>
           </div>
        </div>
     </div>
