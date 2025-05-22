@@ -63,6 +63,50 @@
         $crank_blog_cat = get_theme_mod('crank_blog_cat', false);
     ?>
 
+
+
+
+     <article id="post-<?php the_ID(); ?>" <?php post_class('blog-list__single format-gallery'); ?>>
+
+         <?php if (!empty($gallery_images)): ?>
+             <div class="postbox__thumb">
+                 <div class="postbox__thumb-slider p-relative">
+                     <div class="swiper-container postbox__thumb-slider-active">
+                         <div class="swiper-wrapper">
+                             <?php foreach ($gallery_images as $key => $image): ?>
+                                 <div class="swiper-slide">
+                                     <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_url($image['alt']); ?>">
+                                 </div>
+                             <?php endforeach; ?>
+                         </div>
+                     </div>
+                     <div class="postbox__slider-arrow-wrap d-none d-sm-block">
+                         <button class="postbox-arrow-next">
+                             <i class="fa-sharp fa-regular fa-arrow-left"></i>
+                         </button>
+                         <button class="postbox-arrow-prev">
+                             <i class="fa-sharp fa-regular fa-arrow-right"></i>
+                         </button>
+                     </div>
+                 </div>
+             </div>
+         <?php endif; ?>
+
+         <div class="blog-list__content">
+
+             <?php get_template_part('template-parts/blog/blog-meta'); ?>
+
+             <h3 class="blog-list__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+             <div class="blog-list__btn-box">
+                 <?php the_excerpt(); ?>
+                 <!-- blog btn -->
+                 <?php get_template_part('template-parts/blog/blog-btn'); ?>
+             </div>
+         </div>
+     </article>
+
+
+
      <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-image mb-30 transition-3 format-gallery'); ?>>
 
          <?php if (!empty($gallery_images)): ?>

@@ -59,39 +59,47 @@ if (is_single()):
 <?php else: ?>
 
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-image mb-30 transition-3 format-video'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('blog-list__single format-video'); ?>>
         <?php if (has_post_thumbnail()) : ?>
-            <div class="postbox__thumb">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail('full'); ?>
-                </a>
-                <?php if (!empty($crank_video_url)) : ?>
-                    <div class="postbox__play-btn">
-                        <a class="popup-video pulse-btn"
-                            href="<?php echo esc_url($crank_video_url); ?>"><i class="fa-light fa-play"></i></a>
-                    </div>
-                <?php endif; ?>
+            <div class="blog-list__img-box">
 
+                <div class="blog-list__img">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_post_thumbnail('full'); ?>
+                    </a>
+                    <?php if (!empty($crank_video_url)) : ?>
+                        <div class="postbox__play-btn">
+                            <a class="popup-video pulse-btn" href="<?php echo esc_url($crank_video_url); ?>"><i class="fa-light fa-play"></i></a>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+
+
+
+                <!-- <ul class="blog-list__meta list-unstyled">
+                    <li>
+                        <p><span class="icon-calendar"></span>Nov 19, 2022</p>
+                    </li>
+                    <li>
+                        <p><span class="icon-user-2"></span>By admin</p>
+                    </li>
+                </ul> -->
             </div>
         <?php endif; ?>
-
-        <div class="postbox__content">
+        <div class="blog-list__content">
 
             <?php get_template_part('template-parts/blog/blog-meta'); ?>
 
-            <h3 class="postbox__title">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
-            </h3>
-
-            <div class="postbox__text">
+            <h3 class="blog-list__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <div class="blog-list__btn-box">
                 <?php the_excerpt(); ?>
+                <!-- blog btn -->
+                <?php get_template_part('template-parts/blog/blog-btn'); ?>
             </div>
-
-            <!-- blog btn -->
-            <?php get_template_part('template-parts/blog/blog-btn'); ?>
-
         </div>
     </article>
+
 
 <?php
 endif; ?>

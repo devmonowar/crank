@@ -49,30 +49,28 @@ if (is_single()):
 <?php else: ?>
 
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-image mb-30 transition-3 format-audio'); ?>>
+
+    <article id="post-<?php the_ID(); ?>" <?php post_class('blog-list__single format-audio'); ?>>
+
         <?php if (!empty($crank_audio_url)) : ?>
             <div class="postbox__thumb ratio ratio-16x9">
                 <?php echo wp_oembed_get($crank_audio_url); ?>
             </div>
         <?php endif; ?>
 
-        <div class="postbox__content">
+        <div class="blog-list__content">
 
             <?php get_template_part('template-parts/blog/blog-meta'); ?>
 
-            <h3 class="postbox__title">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
-            </h3>
-
-            <div class="postbox__text">
+            <h3 class="blog-list__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <div class="blog-list__btn-box">
                 <?php the_excerpt(); ?>
+                <!-- blog btn -->
+                <?php get_template_part('template-parts/blog/blog-btn'); ?>
             </div>
-
-            <!-- blog btn -->
-            <?php get_template_part('template-parts/blog/blog-btn'); ?>
-
         </div>
     </article>
+
 
 <?php
 endif; ?>
